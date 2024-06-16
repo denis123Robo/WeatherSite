@@ -6,84 +6,26 @@
     <title>Weather Report</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='script.js'></script>
+    <script defer src='script.js'></script>
 </head>
 <body>
     <header>
-            <div class="MainLine"><h1 id="text">Weather Report</h1></div>
+        <div class="MainLine"><h1 id="text">Weather Report</h1></div>
     </header>
     <main>
         <div class="searchBox">
-            <h2>Найдите свой город:</h2>
-            <input class="countrySelect" type="text">
-            <input class="countrySelect" type="submit">
+            <h2>Search for your town:</h2>
+            <input id="cityInput" class="countrySelect" type="text" placeholder="Enter city name">
+            <button id="searchButton" class="countrySelect" type="button">Search</button>
         </div>
-        <h2>Weather </h2>
-        <div class="weatherWrapper">
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
-            <div class="weatherCard">
-                <h3>Today</h3>
-                <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="icon">
-                <ul>
-                    <li>temp: 25</li>
-                    <li>wind spd: 1111 km\h</li>
-                </ul>
-            </div>
+        <div id="weatherWrapper" class="weatherWrapper">
+            <!-- Weather data will be inserted here -->
         </div>
     </main>
     <footer>
-
     </footer>        
 </body>
 </html>

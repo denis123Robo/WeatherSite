@@ -1,58 +1,100 @@
-*{
+body {
+    font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-ul,
-li {
-    list-style-type: none
-    ;
-}
-body {
-    background-image: url('images/skybg.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #f0f0f0;
+    transition: background-image 0.5s ease-in-out;
     background-size: cover;
-    font-family: "Oswald";
+    background-repeat: no-repeat;
+    background-image: url(sky.jpg);
 }
-.MainLine {
-    width: 100%;
-    height: 125px;
-    background-color: cornflowerblue;
-    text-align: center;
-    font-size: 18px;
-    color: #ADD8E6;
-    
-}
-.searchBox {
-    width: 15%;
-    height: 125px;
-    background-color: cornflowerblue;
-    text-align: center;
-    margin: auto;
-    margin-top: -125px;
-    margin-right: 152px;
-    color: #F0F0F0;
-}
-/* .weatherBlock {
-    width: 20%;
-    height: 150px;
-    background-color: greenyellow;
-    margin: auto;
-    margin-top: 5px;
-    margin-left: 50px;
-} */
 
+header {
+    background-color:#6494ed65;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+header .MainLine h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+.searchBox {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.searchBox h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.searchBox .countrySelect {
+    padding: 10px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+.searchBox #searchButton {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.searchBox #searchButton:hover {
+    background-color: #555;
+}
 
 .weatherWrapper {
     display: flex;
-    gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .weatherCard {
-    border: 2px solid black;
-    max-width: 180px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.weatherCard h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.weatherCard img {
+    margin-bottom: 10px;
+}
+
+.weatherCard ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weatherCard ul li {
+    margin-bottom: 5px;
+}
+
+footer {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
