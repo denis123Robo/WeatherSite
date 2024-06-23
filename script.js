@@ -2,7 +2,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
     const city = document.getElementById('cityInput').value.trim();
     if (city) {
         const apiKey = 'af99b618153d4b25bb7132217242605';
-        const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=14&aqi=no&alerts=no`;
+        const apiUrl = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&aqi=no&alerts=no`;
 
         fetch(apiUrl)
             .then(response => {
@@ -12,17 +12,18 @@ document.getElementById('searchButton').addEventListener('click', () => {
                 return response.json();
             })
             .then(data => {
+                console.log('API Data:', data); // Debug: Log the data received from the API
                 updateWeather(data);
                 updateBackground(data);
             })
             .catch(error => {
                 console.error('Error fetching the weather data:', error);
                 alert('City not found or there was an error fetching the data.');
-                resetBackground();
+                // resetBackground();
             });
     } else {
         alert('Please enter a city name.');
-        resetBackground();
+        // resetBackground();
     }
 });
 
@@ -38,12 +39,11 @@ function updateWeather(data) {
             <h3>${day.date}</h3>
             <img src="${day.day.condition.icon}" alt="${day.day.condition.text}">
             <ul>
-                <li>Temp: ${day.day.avgtemp_c} °C</li>
-                <li>Max Temp: ${day.day.maxtemp_c} °C</li>
-                <li>Min Temp: ${day.day.mintemp_c} °C</li>
-                <li>Wind Speed: ${day.day.maxwind_kph} km/h</li>
-                <li>Chance of Rain: ${day.day.daily_chance_of_rain}%</li>
-                <li>Condition: ${day.day.condition.text}</li>
+                <li>Температура: ${day.day.avgtemp_c} °</li>
+                <li>Макс. Температура: ${day.day.maxtemp_c} °</li>
+                <li>Мин. Температура: ${day.day.mintemp_c} °</li>
+                <li>Скорость Ветра: ${day.day.maxwind_kph} км/ч</li>
+                <li>Шанс Дождя: ${day.day.daily_chance_of_rain}%</li>
             </ul>
         `;
 
@@ -80,12 +80,4 @@ function updateBackground(data) {
     document.body.style.backgroundImage = backgroundImage;
     header.style.backgroundColor = headerBackgroundColor;
     headerText.style.color = headerTextColor;
-}
-
-function resetBackground() {
-    document.body.style.backgroundImage = 'url(sky.jpg)';
-    const header = document.querySelector('header');
-    const headerText = header.querySelector('h1');
-    header.style.backgroundColor = 'rgba(51, 51, 51, 0.8)';
-    headerText.style.color = '#fff';
 }
